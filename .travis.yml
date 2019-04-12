@@ -5,8 +5,21 @@ os:
 cache: packages
 before_install:
 - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
-install:
-- set -e
 - install_hdf5
+- set -e
 - install_cran remotes
+install:
 - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
+after_success:
+- travis cache
+jobs:
+  include:
+  - stage: tidyverse
+    install:
+    - install_cran tidyverse
+  - stage: dynutils
+    install:
+    - install_github_withdeps dynverse/dynutils
+  - stage: dynverse
+    install:
+    - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
