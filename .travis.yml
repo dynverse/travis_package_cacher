@@ -1,8 +1,10 @@
-language: r
+language: generic
 dist: trusty
 os:
 - linux
-cache: packages
+cache:
+  directories:
+    - $HOME/R/Library
 install:
 - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
 - install_hdf5
