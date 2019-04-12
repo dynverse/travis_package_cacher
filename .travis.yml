@@ -3,23 +3,23 @@ dist: trusty
 os:
 - linux
 cache: packages
-before_install:
+install:
 - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
 - install_hdf5
 - set -e
 - install_cran remotes
-install:
+script:
 - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
 after_success:
 - travis cache
 jobs:
   include:
   - stage: tidyverse
-    install:
+    script:
     - install_cran tidyverse
   - stage: dynutils
-    install:
+    script:
     - install_github_withdeps dynverse/dynutils
   - stage: dynverse
-    install:
+    script:
     - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
