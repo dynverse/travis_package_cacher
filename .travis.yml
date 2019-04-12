@@ -1,0 +1,12 @@
+language: r
+dist: trusty
+os:
+- linux
+cache: packages
+before_install:
+- source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
+install:
+- set -e
+- install_hdf5
+- install_cran remotes
+- install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
