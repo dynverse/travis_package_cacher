@@ -1,10 +1,12 @@
-language: generic
+language: r
 dist: trusty
-os:
-- linux
+sudo: true
+os: linux
 cache:
   directories:
     - $HOME/R/Library
+before_install:
+- gem install travis
 install:
 - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
 - install_hdf5
