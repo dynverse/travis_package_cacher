@@ -23,10 +23,10 @@ jobs:
   - stage: dynverse
     script:
     - DYNVERSE_BRANCH=master
-    - install_github_withdeps_forced dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
+    - install_github_withdeps_force dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
     - upload_tar
   - stage: dynverse
     script:
     - DYNVERSE_BRANCH=devel
-    - install_github_withdeps_forced dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
+    - install_github_withdeps_force dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
     - upload_tar
