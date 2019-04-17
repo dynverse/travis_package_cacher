@@ -12,9 +12,6 @@ install:
 - source helper.sh
 script:
 - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
-env:
-  - DYNVERSE_BRANCH=master
-  - DYNVERSE_BRANCH=devel
 jobs:
   include:
   - stage: tidyverse
@@ -27,3 +24,6 @@ jobs:
     script:
     - install_github_withdeps dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
     - upload_tar
+    env:
+    - DYNVERSE_BRANCH=master
+    - DYNVERSE_BRANCH=devel
