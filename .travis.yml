@@ -12,8 +12,6 @@ install:
 - source helper.sh
 script:
 - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
-after_success:
-- travis cache
 jobs:
   include:
   - stage: tidyverse
@@ -25,4 +23,4 @@ jobs:
   - stage: dynverse
     script:
     - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
-    - upload_tar 
+    - upload_tar
