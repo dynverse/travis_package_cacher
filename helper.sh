@@ -14,6 +14,10 @@ upload_tar() {
 
   tar -cvzf - * | split -b 20M - "cache.tar.gz.part-"
 
+  if [ -d ".git" ]; then
+    rm -rf .git
+  fi
+
   git init
   git checkout --orphan cache-$DYNVERSE_BRANCH
 
