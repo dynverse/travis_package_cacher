@@ -17,7 +17,7 @@ upload_tar() {
   git init
   git checkout --orphan cache-$TRAVIS_BRANCH
 
-  git add build.tar.gz
+  git add *.tar.gz
   git commit --allow-empty -m "Travis build: $TRAVIS_BUILD_NUMBER [ci skip]"
 
   git remote add origin https://${GITHUB_PAT}@github.com/dynverse/travis_package_cacher.git
