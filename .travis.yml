@@ -5,14 +5,11 @@ os: linux
 cache:
   directories:
     - $HOME/R/Library
-before_install:
-- gem install travis
-- echo "y" | travis login --github-token $GITHUB_PAT
 install:
 - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
-- install_hdf5
 - set -e
 - install_cran remotes
+- source helper.sh
 script:
 - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
 after_success:
@@ -28,3 +25,4 @@ jobs:
   - stage: dynverse
     script:
     - install_github_withdeps dynverse/dyneval dynverse/dyno dynverse/dynwrap dynverse/dyntoy dynverse/dynutils dynverse/dynplot
+    - upload_tar 
