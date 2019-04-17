@@ -19,7 +19,7 @@ jobs:
     - install_cran tidyverse
   - stage: dynutils
     script:
-    - install_github_withdeps dynverse/dynutils@${DYNVERSE_BRANCH}
+    - install_github_withdeps dynverse/dynutils
   - stage: dynverse
     script:
     - install_github_withdeps dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
