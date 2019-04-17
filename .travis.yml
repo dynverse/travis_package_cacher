@@ -26,4 +26,9 @@ jobs:
     - upload_tar
     env:
     - DYNVERSE_BRANCH=master
+  - stage: dynverse
+    script:
+    - install_github_withdeps dynverse/dyneval@${DYNVERSE_BRANCH} dynverse/dyno@${DYNVERSE_BRANCH} dynverse/dynwrap@${DYNVERSE_BRANCH} dynverse/dyntoy@${DYNVERSE_BRANCH} dynverse/dynutils@${DYNVERSE_BRANCH} dynverse/dynplot@${DYNVERSE_BRANCH}
+    - upload_tar
+    env:
     - DYNVERSE_BRANCH=devel
