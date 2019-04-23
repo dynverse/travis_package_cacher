@@ -8,6 +8,7 @@ cache:
 install:
 - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
 - set -e
+- install_hdf5
 - install_cran remotes
 - source helper.sh
 script:
