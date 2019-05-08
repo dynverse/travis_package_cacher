@@ -23,7 +23,7 @@ jobs:
     - install_github_withdeps dynverse/dynutils
   - stage: singlecellexperiment
     script:
-    - install_cran SingleCellExperiment
+    - install_bioc SingleCellExperiment
   - stage: dynverse
     name: master
     script:
