@@ -21,9 +21,10 @@ jobs:
   - stage: dynutils
     script:
     - install_github_withdeps dynverse/dynutils
-  - stage: singlecellexperiment
+  - stage: needlessly large bioconductor dependency that take ages to install
     script:
     - install_bioc SingleCellExperiment
+    - install_bioc Rhdf5lib
   - stage: dynverse
     name: master
     script:
