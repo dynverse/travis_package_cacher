@@ -26,5 +26,8 @@ upload_tar() {
 
   git remote add origin https://${GITHUB_PAT}@github.com/dynverse/travis_package_cacher.git
   git push --force origin cache-$DYNVERSE_BRANCH
+
+  rm cache.tar.gz*
+
   popd
 }
